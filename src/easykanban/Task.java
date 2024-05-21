@@ -9,6 +9,7 @@ package easykanban;
  * @author RC_Student_lab
  */
 
+
 public class Task {
     private static int taskCounter = 0;
 
@@ -56,7 +57,6 @@ public class Task {
         return total;
     }
 
-    
     public String getTaskDescription() { return taskDescription; }
     public String getTaskId() { return taskId; }
 }
