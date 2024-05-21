@@ -22,15 +22,15 @@ public class UserManager {
     }
 
     public void registerUser() {
-        String username = JOptionPane.showInputDialog(null, "Enter a username:");
-        if (username == null || username.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Username cannot be empty.");
+        String username = JOptionPane.showInputDialog(null, "Enter a username (must contain an underscore and be no more than 5 characters long):");
+        if (username == null || username.isEmpty() || !User.isValidUsername(username)) {
+            JOptionPane.showMessageDialog(null, "Invalid username. Username must contain an underscore and be no more than 5 characters long.");
             return;
         }
 
-        String password = JOptionPane.showInputDialog(null, "Enter a password:");
-        if (password == null || password.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Password cannot be empty.");
+        String password = JOptionPane.showInputDialog(null, "Enter a password (at least 8 characters long, contain a capital letter, a number, and a special character):");
+        if (password == null || password.isEmpty() || !User.isValidPassword(password)) {
+            JOptionPane.showMessageDialog(null, "Invalid password. Password must be at least 8 characters long, contain a capital letter, a number, and a special character.");
             return;
         }
 
