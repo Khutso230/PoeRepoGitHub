@@ -9,7 +9,9 @@ package easykanban;
  * @author RC_Student_lab
  */
 
-import javax.swing.*;
+
+
+import javax.swing.JOptionPane;
 
 public class EasyKanban {
     public static void main(String[] args) {
