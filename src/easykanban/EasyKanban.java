@@ -9,10 +9,37 @@ package easykanban;
  * @author RC_Student_lab
  */
 
+
 import javax.swing.*;
 
 public class EasyKanban {
     public static void main(String[] args) {
+        UserManager userManager = new UserManager();
+
+        while (true) {
+            String option = JOptionPane.showInputDialog(null, "1) Register\n2) Login\n3) Quit");
+            if (option == null || option.isEmpty()) {
+                continue;
+            }
+
+            switch (option) {
+                case "1":
+                    userManager.registerUser();
+                    break;
+                case "2":
+                    if (userManager.loginUser()) {
+                        runKanban();
+                    }
+                    break;
+                case "3":
+                    System.exit(0);
+                default:
+                    JOptionPane.showMessageDialog(null, "Invalid choice, please try again.");
+            }
+        }
+    }
+
+    public static void runKanban() {
         String welcomeMessage = "Welcome to EasyKanban";
         JOptionPane.showMessageDialog(null, welcomeMessage);
 
